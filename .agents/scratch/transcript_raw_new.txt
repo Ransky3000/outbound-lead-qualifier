@@ -1,0 +1,862 @@
+[00:00] I'll make over $1 million from AI this
+[00:02] year and I'm only 23 years old. When I
+[00:04] started, I was renting a crappy
+[00:05] apartment and now I'm talking to you
+[00:07] guys from my own place in Chicago after
+[00:09] spending multiple days with 9 figureure
+[00:11] entrepreneurs like Alex Herozi and
+[00:12] speaking at conferences all over the
+[00:14] United States. But let's say I had to
+[00:15] start over with no YouTube channel, no
+[00:17] money, and let's say I even forgot
+[00:19] everything that I know about AI
+[00:20] automation. In this video, I'll give you
+[00:22] guys a blueprint with the exact steps
+[00:23] that I followed. But unlike all of the
+[00:25] other videos on this topic, I'll give
+[00:26] you guys real steps you can take today
+[00:28] to make your first few thousand all the
+[00:30] way to your first million dollars with
+[00:32] AI. I'll also give you a scorecard for
+[00:33] each stage of the process that shows you
+[00:35] how long it takes, the expertise it
+[00:37] requires, and the income potential. I'll
+[00:39] even give you action steps for each
+[00:40] stage so you know exactly what to do
+[00:42] next. I want to make this the most
+[00:43] actionable video you've ever seen about
+[00:45] making money with AI by someone who's
+[00:46] actually doing it every day in the
+[00:48] trenches. Here's the good news. You
+[00:49] don't need to know everything about
+[00:50] automation to get started. You don't
+[00:52] need to write code or understand every
+[00:54] single little integration in Naden or
+[00:56] master complicated databases right away.
+[00:58] So stage number one is freelancing with
+[01:00] AI modules. Instead of building
+[01:02] everything from scratch, you can utilize
+[01:03] NADN templates. These are pre-built
+[01:05] workflows that other people have already
+[01:07] created and have shared with the
+[01:08] community so that you can reuse them.
+[01:10] All you have to do is import them,
+[01:11] connect the client's accounts, and
+[01:12] adjust a few details. They're like Lego
+[01:13] bricks. At first, you might only know
+[01:15] how to use one block, say an AI
+[01:17] receptionist. Later, you add more. a
+[01:19] review request bot, a support agent, a
+[01:21] newsletter ghostwriter. Each new block
+[01:22] you learn gives you another offer you
+[01:24] can sell. And when you've connected
+[01:25] enough blocks, you can snap them
+[01:26] together into bigger systems. It's a
+[01:28] huge shortcut. Rather than reinventing
+[01:30] the wheel, you take what's already
+[01:31] working, plug it in, and deliver results
+[01:33] quickly. The key is not to sell
+[01:35] everything to everyone. It's to master
+[01:36] one block at a time, prove you know how
+[01:38] it works, and prove that it provides
+[01:40] value to a client, and then only sell it
+[01:42] to clients who need that specific
+[01:43] outcome. That's how you build confidence
+[01:45] and credibility without getting
+[01:46] overwhelmed. This is where I think you
+[01:48] should start prioritizing reps over
+[01:49] outcomes because it's really going to
+[01:50] help you start to think like a business
+[01:52] owner and see how you can provide value
+[01:54] to them. The build framework B stands
+[01:56] for block byb block. Start with a
+[01:58] single-ended template. Don't try to
+[01:59] master everything at once. Just pick
+[02:01] one. The U stands for understand the use
+[02:03] case. Ask what kind of businesses would
+[02:05] this template help the most. For
+[02:07] example, an AI receptionist template
+[02:08] could help dentists, HVAC, med spas. An
+[02:11] email support agent could help
+[02:12] e-commerce shops and service providers.
+[02:14] A newsletter ghostwriter agent could
+[02:16] help coaches and SAS founders. The I
+[02:18] stands for install and imitate. Import
+[02:20] the template into NAND. Run it with test
+[02:21] data until you understand every single
+[02:23] step that's going into it. Because like
+[02:25] I said, you're not going to be able to
+[02:26] take a template and go sell it to a
+[02:27] business. You're going to be able to
+[02:28] take a template, customize it a little
+[02:30] bit, and then sell it to a business.
+[02:31] Then build a simple 60-second demo of
+[02:33] you showing how it works and the value
+[02:35] that it adds. And then the L stands for
+[02:36] land the first client. Reach out to
+[02:38] businesses who clearly need that
+[02:39] automation. Your pitch can be something
+[02:40] like, "Hey, I built a workflow that
+[02:42] solves X painoint. I've got a 60-cond
+[02:44] demo showing how this system works. You
+[02:45] want me to set it up for you? The D
+[02:47] stands for document and duplicate. Once
+[02:48] it's live, measure the before and after
+[02:50] results. Things like time saved, errors
+[02:52] reduced, and revenue gained. This
+[02:54] becomes a case study for future clients.
+[02:56] Then you can move on to the next
+[02:57] template and repeat. And to show you
+[02:58] guys this in action, let me tell you a
+[03:00] quick story from inside my community.
+[03:01] One of our members, Jerome, didn't
+[03:03] consider himself an expert in Naden at
+[03:05] all, but he saw one of my free templates
+[03:06] for a newsletter writing agent. The
+[03:08] workflow was super simple. Every morning
+[03:09] it would research a specific topic,
+[03:11] draft a newsletter in the client's tone
+[03:12] of voice and deliver it ready to send to
+[03:15] their audience. So what Jerome did was
+[03:16] he took that workflow and ran it so he
+[03:18] could understand it really well. And
+[03:19] then more importantly, he understood the
+[03:21] pain that businesses feel around
+[03:23] producing consistent newsletters. So he
+[03:25] tweaked the system prompts a little bit
+[03:26] and the research configuration so that
+[03:28] the whole newsletter was tailored
+[03:29] towards the client's industry and match
+[03:31] their brand voice. That tiny adjustment
+[03:33] was all that it took to make it valuable
+[03:35] for this specific client. And he was
+[03:37] able to be seen as valuable because he
+[03:38] didn't just pitch the workflow, he
+[03:40] showed the math. He figured out how long
+[03:41] their team was spending on research and
+[03:43] writing. If they were spending about an
+[03:44] hour every single day and he was able to
+[03:46] automate 90% of that process, he just
+[03:48] gave them back roughly 5 hours a week or
+[03:50] 20 hours a month. Over the course of the
+[03:51] year, that adds up to potentially tens
+[03:53] of thousands of dollars and saved labor
+[03:55] costs and freed up focus. That's why the
+[03:57] client was happy to pay, not because
+[03:58] Jerome had a template, but for the
+[04:00] outcome that the template delivered. So,
+[04:02] here's your practical application. Don't
+[04:04] try to master everything at once. Pick
+[04:06] one template, learn it deeply,
+[04:07] understand how to customize it, and sell
+[04:09] that outcome. Create a demo video that
+[04:11] makes the benefit obvious. Pitch it to a
+[04:13] handful of businesses that need exactly
+[04:14] that solution. As you close deals, stack
+[04:16] more templates into your toolkit and
+[04:18] gradually expand your offerings. Now,
+[04:19] here's a reality check and scores for
+[04:21] this method. Speed to money is going to
+[04:23] be an 8 out of 10 because you can close
+[04:24] your first deal within days if you pick
+[04:26] up a clear use case and you show a quick
+[04:28] demo. It's probably one of the fastest
+[04:29] ways to get paid while you're learning.
+[04:31] Ease for beginners, 6 out of 10.
+[04:33] Templates lower the technical barrier,
+[04:34] but you still need to understand how to
+[04:36] configure them and more importantly, how
+[04:37] to frame the business value. And then
+[04:39] income potential, three out of 10.
+[04:41] Freelancing with modules is a great way
+[04:42] to get started and build proof. But
+[04:44] income usually caps in the mid to high
+[04:46] four figures per month unless you evolve
+[04:47] into consulting or retainers because
+[04:49] once you've delivered a few projects as
+[04:51] a freelancer, something big becomes
+[04:53] obvious. Most businesses don't even know
+[04:55] what they should be automating. They
+[04:56] know AI is changing everything, but
+[04:58] they're confused about where to start,
+[04:59] what's possible, and what actually saves
+[05:01] money. And that's where you step into
+[05:02] the next stage, AI consulting. As a
+[05:04] consultant, you're no longer just
+[05:05] offering one automation, one template.
+[05:07] You're offering clarity. You audit the
+[05:09] business, find the biggest
+[05:10] opportunities, and design a road map for
+[05:12] how AI can transform their operations.
+[05:14] Sometimes you'll still use modules from
+[05:16] templates to implement quick wins and
+[05:18] build trust. At True Horizon, we have a
+[05:19] library of templates that we just plug
+[05:21] in to cut down our development time. But
+[05:22] often, you'll need to create workflows
+[05:24] from scratch, custom builds that fit the
+[05:26] company's exact processes and tech
+[05:28] stack. That's why this stage requires
+[05:29] much more knowledge than freelancing.
+[05:31] You need to understand a wide variety of
+[05:32] automations, how to measure cost
+[05:34] savings, and how to scope complex
+[05:36] projects. The upside here is that it can
+[05:38] pay far more because you might be able
+[05:40] to charge something like $5,000 just for
+[05:42] the AI business audit and then make
+[05:43] another 20 to even $100,000 implementing
+[05:46] that entire plan and system. So, for
+[05:49] this stage, we're using the scan
+[05:50] framework. S stands for study the
+[05:52] business, run discovery calls with
+[05:54] executives, ask about bottlenecks,
+[05:55] recurring tasks, staffing costs, and
+[05:57] customer complaints. Gather as much
+[05:59] detail as possible about how much time
+[06:00] and money are currently being spent
+[06:02] manually. The C stands for calculate the
+[06:04] opportunity. Translate these
+[06:05] inefficiencies into numbers that a
+[06:07] business owner can actually understand.
+[06:09] So if a process costs $200,000 a year in
+[06:11] labor and AI can cut it by 70%, that's
+[06:14] $140,000 savings opportunity. Show this
+[06:17] in black and white so clients can
+[06:18] clearly see the ROI. That way it doesn't
+[06:20] become a cost to work with you, it
+[06:21] becomes an investment with a measurable
+[06:23] return. The A stands for architect the
+[06:25] solution. Design a road map. Some
+[06:27] workflows will be plug-and-play from
+[06:28] existing templates. Others will need to
+[06:30] be built from scratch. At this stage,
+[06:31] you're not just delivering a tool.
+[06:33] You're designing a system that touches
+[06:35] multiple departments. Finally, the N
+[06:37] stands for narrate the results. Unlike
+[06:39] the freelancer stage, where your case
+[06:40] studies prove you can build, consulting
+[06:42] case studies prove that you can deliver
+[06:44] businesswide ROI and that you are an
+[06:46] expert in figuring out what
+[06:47] opportunities need automation. Then you
+[06:49] take those case studies, put them on
+[06:50] your website, share them on LinkedIn,
+[06:52] Twitter, or YouTube, and that's how you
+[06:54] can start to attract new consulting
+[06:55] clients. The algorithms nowadays are
+[06:57] super advanced. If you put something out
+[06:58] there, it will find people that find
+[07:00] that interesting. One of my first real
+[07:02] consulting projects happened back when I
+[07:03] was working completely solo. Instead of
+[07:05] trying to juggle multiple clients, I
+[07:06] thought that I might just want to go
+[07:08] really deep with one and provide as much
+[07:10] value as I could. The idea was simple.
+[07:12] If I could become a trusted partner for
+[07:13] a single business, I'd build more trust,
+[07:15] land referrals, and create a long-term
+[07:17] relationship. So, the client originally
+[07:18] came to me wanting a personal assistant,
+[07:20] but after four discovery calls, we
+[07:22] walked through his day and his team's
+[07:23] day, and we found something much higher
+[07:25] leverage, which was customer support.
+[07:26] Tickets were coming in seven days a
+[07:28] week, but employees were only answering
+[07:29] them during the weekdays. That meant
+[07:31] potentially slow responses, frustrated
+[07:33] customers, and employees stuck doing
+[07:34] work that they didn't enjoy. So, instead
+[07:36] of starting with a personal system, we
+[07:37] decided to build a customer support
+[07:38] workflow. And really, the hardest part
+[07:40] of the system was getting all of the
+[07:41] knowledgebased information into
+[07:43] something that the agent could then use
+[07:44] in order to accurately respond to
+[07:46] customers. But the team instantly got
+[07:47] back over 10 hours a week. Customers
+[07:49] started getting answers around the clock
+[07:50] and the business had a foundation that
+[07:52] they could scale off of. So that right
+[07:53] there is what consulting is all about.
+[07:55] You're not just building what the client
+[07:56] asks for. You're digging into their
+[07:57] operations, finding true bottlenecks,
+[07:59] and designing the solution that creates
+[08:01] the biggest return. Because there's all
+[08:02] these tangible benefits like time saved
+[08:04] and hours saved. But there's also
+[08:05] intangibles like the quality of life of
+[08:07] your employees. So here's how you can
+[08:09] apply this to your own consulting
+[08:10] business today. Use your freelancer case
+[08:12] studies as your entry ticket into
+[08:14] consulting. Once you're consulting,
+[08:15] create new case studies that show
+[08:16] measurable ROI from audits and
+[08:18] implementations. Turn those into
+[08:19] content, short posts, articles,
+[08:21] breakdowns, videos, anything that
+[08:23] positions you as an expert worth tens of
+[08:25] thousands of dollars per engagement.
+[08:27] Expand your technical range so you can
+[08:28] confidently build custom workflows when
+[08:30] templates aren't enough. And then you
+[08:31] can potentially charge in two places,
+[08:33] once for the audit and once for the
+[08:34] implementation. Just make sure to price
+[08:36] based on value so it's a no-brainer for
+[08:38] the client. So here's the reality check
+[08:40] and the scorecard. Speed to money, we've
+[08:41] got a 6 out of 10. Deals can take
+[08:43] longer. You have to work your way up to
+[08:44] this stage, but audit retainers can
+[08:46] close fast when you have proof. Ease for
+[08:48] beginners is a 4 out of 10. It requires
+[08:50] both technical range and consulting
+[08:52] credibility. Income potential 6 out of
+[08:54] 10. A handful of strong consulting case
+[08:56] studies can land six-figure projects and
+[08:58] set you up for seven figures annually.
+[09:00] Once again, just wanted to hammer this
+[09:01] home. Your first case studies should
+[09:03] come from freelancing, but consulting is
+[09:05] where you start producing the kind of
+[09:06] results that make executives line up to
+[09:08] work with you. And the more you share
+[09:10] those as content, the more clients will
+[09:11] come to you instead of you chasing them.
+[09:13] But at some point, what happens is
+[09:14] you'll hit the limit of what you can do
+[09:16] alone. You can only take so many calls,
+[09:18] design so many systems, and build so
+[09:19] many automations yourself. If you want
+[09:21] to scale past that point, the answer is
+[09:23] to turn your consulting business into a
+[09:25] true AI automation agency. So stage
+[09:27] three here is to scale into an AI
+[09:29] partner business. Unlike freelancing or
+[09:31] solo consulting, the partner model is
+[09:33] about building a team around you. This
+[09:35] is more commonly referred to and known
+[09:36] as the AI automation agency. However, at
+[09:38] True Horizon AI, we call ourselves an AI
+[09:41] partner because we think in terms of
+[09:42] long-term partnerships rather than
+[09:44] one-off projects, and that is exactly
+[09:46] what the majority of clients are looking
+[09:47] for as well. You start by bringing on
+[09:49] developers to handle the technical
+[09:51] builds that frees you up to focus more
+[09:53] on audits, consulting, and highle
+[09:55] strategy. As your demand grows, you add
+[09:56] salespeople or appointment setters who
+[09:58] can fill your pipeline. That way, you're
+[09:59] not spending hours every day doing
+[10:01] outreach. You're closing deals, running
+[10:03] audits, and positioning yourself as the
+[10:04] expert. It's important though that you
+[10:06] went through freelancing and consulting
+[10:07] so that you understand exactly what it
+[10:09] takes to be successful in those roles so
+[10:11] you can then hire for those roles. This
+[10:14] model works because it allows you to
+[10:15] basically multiply your time. Instead of
+[10:17] being stuck in delivery, you shift your
+[10:18] focus to brand authority and client
+[10:20] relationships while your team executes
+[10:21] the builds. And if you do it right, the
+[10:23] upside is massive. An agency built on
+[10:25] consulting foundations can easily hit
+[10:27] over $1 million in annual revenue. Scale
+[10:29] it further with more developers and a
+[10:30] sales team and you can grow to $10
+[10:32] million per year or more. And here's
+[10:33] some perspective. Big firms like
+[10:35] McKenzie, BCG, Accenture, they charge
+[10:38] hundreds of thousands of dollars just
+[10:39] for an AI consultation or audit. That
+[10:41] doesn't even include hands-on
+[10:43] implementation yet. Asenture alone
+[10:44] booked over $600 million in AI
+[10:46] consulting revenue in a single quarter
+[10:48] and more than 2.6 billion in half of a
+[10:50] year. Now, most businesses that are
+[10:52] outside of the Fortune 500 cannot afford
+[10:54] that. So, that's the huge opportunity
+[10:56] for you. If you can walk into a mid-size
+[10:58] company, diagnose inefficiencies, design
+[11:00] the roadmap, and then actually build the
+[11:02] automations as well, you can charge a
+[11:03] fraction of what the big firms do, and
+[11:05] still deliver way more value. This is
+[11:06] the market that most people are
+[11:08] overlooking, and it's wide open right
+[11:09] now. So, of course, we've got another
+[11:11] actionable framework for you guys. This
+[11:13] one is the grow framework. The G stands
+[11:15] for get developers. Hire one or two
+[11:17] developers who can reliably deliver
+[11:18] builds. Start by offloading the most
+[11:20] time-conuming technical work so you can
+[11:22] stay client-f facing, managing the
+[11:23] relationship, and keeping the clients
+[11:25] happy. The R stands for retain
+[11:26] authority. Keep yourself positioned as
+[11:28] the strategist and thought leader.
+[11:29] You're still running audits, mapping
+[11:31] ROI, and guiding system design. The
+[11:32] developers are executing on your vision.
+[11:34] The O is for onboard sales. Once your
+[11:37] delivery is stable, bring in sales reps
+[11:38] or appointment setters. Their job is to
+[11:40] book calls and keep your pipeline full
+[11:42] so you can focus on closing bigger deals
+[11:43] and leading your team. And the W is win
+[11:46] with brand. At this stage, your personal
+[11:48] brand is your biggest asset. Share your
+[11:50] case studies, your content, and thought
+[11:52] leadership at scale. You're no longer
+[11:53] just the automation guy. You're a
+[11:55] trusted name in AI automation for your
+[11:56] niche. So when I started solo
+[11:58] consulting, I hit that ceiling fast
+[12:00] where I needed to bring on more people.
+[12:01] I was closing deals, but between
+[12:02] discovery calls, building, delivery, I
+[12:04] was getting maxed out. That's when I
+[12:06] realized if I wanted to grow, it was a
+[12:08] matter of hiring more people to help me
+[12:09] out. That's when I partnered up with my
+[12:11] co-founders at True Horizon, Milan and
+[12:12] Tyler, and that was the start of our
+[12:14] business together. Once we had a team,
+[12:16] everything changed. We were able to
+[12:17] scale up developers, start bringing on
+[12:19] more roles like salespeople and project
+[12:20] managers, and we could just move a lot
+[12:22] quicker on delivery. And we learned a
+[12:23] lot more throughout all that process.
+[12:25] The size of the deals we could close got
+[12:26] bigger and bigger as we had more
+[12:28] capacity and also more expertise. At
+[12:30] first, that looked like, you know,
+[12:31] $4,000 builds, $6,000 builds, maybe a
+[12:33] $12,000 build. And now we're signing
+[12:35] deals worth hundreds of thousands of
+[12:36] dollars because companies now see us as
+[12:38] a long-term partner rather than just
+[12:40] another AI dev shop. So, my
+[12:42] recommendation would be before you make
+[12:43] this leap of bringing on people, you
+[12:45] want to make sure that you build a solid
+[12:46] foundation. Here's a quick little
+[12:48] checklist of when you might be ready to
+[12:49] start scaling into an agency or an AI
+[12:51] partner business. You have consistent
+[12:53] consulting clients and can close
+[12:55] projects reliably. You've built case
+[12:56] studies that prove ROI and attract
+[12:58] inbound leads. You have more work than
+[12:59] you can handle alone and you need help
+[13:01] with delivery. You've built a personal
+[13:02] brand strong enough to attract
+[13:03] opportunities consistently. Once those
+[13:05] pieces are in place, the next logical
+[13:07] step is to hire developers for delivery.
+[13:09] Bring on sales for support so you can
+[13:10] focus on what really scales the
+[13:12] business. Consulting, relationships, and
+[13:14] brand authority. So the reality check
+[13:16] and scorecard for this stage is speed to
+[13:19] money 5 out of 10. Hiring takes time,
+[13:21] but scaling capacity can quickly push
+[13:22] revenue higher. Ease for beginners is a
+[13:24] 2 out of 10. You should only start here
+[13:26] after mastering consulting because as
+[13:28] you bring on people and you expand your
+[13:30] team, you're adding a lot of moving
+[13:31] pieces. Income potential is an 8 out of
+[13:33] 10 because if you do this right, you can
+[13:35] hit millions of dollars annually. Just
+[13:37] remember that this model is not your
+[13:39] first step. Don't run before you walk.
+[13:41] Of course, there's a catch when you
+[13:42] scale into an agency. Expenses,
+[13:44] developers, salespeople, maybe even
+[13:46] advertising costs. All of that starts to
+[13:48] add up. So, while a million-doll per
+[13:49] year agency may sound impressive, once
+[13:51] you pay out salaries and overhead, you
+[13:53] might only keep half of that in profit.
+[13:55] Still a great number, but here's the
+[13:56] part that might shock you. I actually
+[13:58] make the most amount of my money in a
+[13:59] completely different way, and that's by
+[14:01] teaching AI automation. So, that's
+[14:02] exactly what stage 4 is all about. Right
+[14:04] now, I make over $150,000 per month in
+[14:07] pure profit from teaching AI automation.
+[14:09] No payroll, no big expenses, just me
+[14:11] sharing what I know, which is exactly
+[14:12] why you guys are listening to me right
+[14:14] now. I create YouTube videos where I
+[14:15] show off really unique and cool
+[14:17] automations that I've built. These can't
+[14:18] just be cookie cutter workflows. You
+[14:20] have to know what you're doing because
+[14:21] there's no hiding if the automation
+[14:22] isn't working or impressive. And what I
+[14:24] started doing since the beginning was
+[14:26] just giving out my templates for free.
+[14:27] At the end of the video, I'd say, "Hey,
+[14:28] if you want this, if you want to play
+[14:29] around with it to learn it better, you
+[14:31] can grab it for free in my school
+[14:32] community. So, I'm providing all of this
+[14:34] value in my free group and then I
+[14:36] promote my paid community, which is
+[14:37] currently $89 a month, soon to increase.
+[14:39] In the communities, not only do members
+[14:41] get templates, videos, and live calls
+[14:43] with me, but they also get tech support
+[14:45] because they're all trying to figure out
+[14:46] the previous stage that we just talked
+[14:47] about and start delivering a automations
+[14:49] to their clients. But anyways, that's
+[14:51] the whole funnel. Videos, free school
+[14:53] group, paid group. Almost all of it is
+[14:54] pure profit. So, the framework here is
+[14:56] the share framework. S stands for show.
+[14:59] Demonstrate automations that are
+[15:00] genuinely unique and valuable. Teaching
+[15:02] only works if people say, "Wow, I didn't
+[15:03] know you could do that." Or, "Wow, that
+[15:05] really helps me out." H stands for hook.
+[15:07] Invite your viewers to get a resource
+[15:09] from you for free. This free value ad
+[15:10] builds trust and helps you start to
+[15:12] build up a community. The A stands for
+[15:14] attract in the free group. Deliver
+[15:15] consistent value. This builds trust and
+[15:17] warms people up for the next step. The R
+[15:19] stands for recommend. Present the paid
+[15:21] community as the natural next move for
+[15:23] those who want deeper access, advanced
+[15:25] templates, and live calls. And then the
+[15:27] E stands for expand. Keep producing
+[15:29] videos and templates. Every new
+[15:30] automation you build becomes content
+[15:32] that grows your audience and recurring
+[15:33] revenue. And what's great about this is
+[15:35] if you've been following the previous
+[15:36] stages where you've been sharing your
+[15:37] case studies online, you might have
+[15:39] already started to build up a bit of a
+[15:40] following and trust, which is exactly
+[15:42] why I started my YouTube channel. It
+[15:44] wasn't because I thought it would become
+[15:45] my full-time job or a business in
+[15:48] itself. I honestly just wanted a way to
+[15:49] teach myself better and also just kind
+[15:51] of build up a digital portfolio. So then
+[15:53] when I started to reach out to clients,
+[15:54] I could say, "Hey, check out my YouTube
+[15:56] if you want to see some other stuff that
+[15:57] I've worked on." Some people wanted to
+[15:58] work with me. Some people then reached
+[16:00] out wanting me to build custom
+[16:01] automations. And some people were
+[16:02] reaching out just for the templates in
+[16:04] my videos, which is exactly why I spun
+[16:05] up the free school just as a place to
+[16:07] post all the templates and start to
+[16:09] build some community. And then when I
+[16:10] had that free community already growing,
+[16:12] I had some people reaching out for
+[16:13] deeper tech support or deeper
+[16:14] mentorship. And that's when I decided to
+[16:16] launch the paid community. So now I have
+[16:18] a very simple model. In my videos, I
+[16:19] say, "Hey, if you want my business to
+[16:21] work with you, then go here. If you want
+[16:23] the free template, go here. And if you
+[16:24] want deeper support with other builders,
+[16:26] then go here." And I know this is a ton
+[16:27] of information that I just threw at you
+[16:29] guys. So, I'm putting this entire video
+[16:30] into a resource pack that you can all go
+[16:32] get completely for free in my free
+[16:34] school community. Link for that's down
+[16:35] in the description. Moving on to the
+[16:36] practical application of this stage.
+[16:38] Teaching is the most advanced step in
+[16:40] the journey. This is because there's no
+[16:42] hiding if you don't know what you're
+[16:43] doing. Your automations need to be
+[16:44] sharp, original, and battle tested. The
+[16:46] good news is everything that you've done
+[16:48] up to now prepares you for this moment.
+[16:50] Freelancing taught you how to build
+[16:51] modules and land clients. Consulting
+[16:53] taught you how to identify business
+[16:54] problems and communicate ROI. and
+[16:56] building an AI partner business taught
+[16:57] you how to build authority and manage
+[16:59] demand. So, by the time you reach this
+[17:00] stage of teaching, you've already built
+[17:02] the skills, case studies, maybe even a
+[17:04] small following, and the confidence to
+[17:06] share your knowledge publicly and get
+[17:08] paid for it. And you may be thinking
+[17:09] that it sounds tough because you don't
+[17:10] have a huge audience and it's going to
+[17:11] be tough to grow. But one thing that
+[17:13] I've noticed in my communities actually
+[17:14] and in other larger communities online
+[17:16] is that sometimes people really do crave
+[17:18] the smaller feel of a community. Exactly
+[17:20] why some people like to be in a small
+[17:22] town rather than a big city. So, there's
+[17:23] always an opportunity for you to build a
+[17:25] community as long as people trust you
+[17:26] and your voice. And of course, there has
+[17:28] to be some sort of knowledge gap between
+[17:29] the people you're attracting and you.
+[17:31] You don't have to be a complete expert.
+[17:32] There's lots of people that know more
+[17:34] about Naden and AI than I do, but I know
+[17:36] more than the people that are likely
+[17:38] joining my community. Anyways, the
+[17:39] reality check and scorecard here, speed
+[17:41] to money, 4 out of 10. Building an
+[17:43] audience takes time, but once you have
+[17:44] one, conversions are relatively quick.
+[17:46] And like I said earlier, the social
+[17:48] algorithms have never been as advanced
+[17:49] as they are now. So, if you're really
+[17:51] delivering value, it will get put in
+[17:53] front of people who are looking for that
+[17:54] type of value. You just have to be
+[17:56] consistent with your content. East for
+[17:57] beginners is a 1 out of 10. This is
+[17:59] probably the hardest step. There's no
+[18:00] shortcut. You have to be skilled and
+[18:02] confident in your teaching. And then
+[18:04] income potential. We're giving this one
+[18:05] a 10 out of 10 because teaching can
+[18:07] scale infinitely with recurring
+[18:08] subscriptions, courses, content,
+[18:11] sponsorships, etc. And once again,
+[18:13] teaching a automation is the endgame.
+[18:15] It's where authority, proof, and
+[18:17] technical mastery converge. If you
+[18:19] followed the process from freelancer to
+[18:20] consultant to an agency, you'll be ready
+[18:22] to step into teaching and build an
+[18:24] audience that can fund you for life. So,
+[18:25] let's just take a breath for a second
+[18:26] and recap. If you want to make real
+[18:28] money with AI automation, you don't need
+[18:30] to jump straight into an agency on day
+[18:31] one. There's a natural progression, a
+[18:33] staircase that you can climb one step at
+[18:35] a time. And here's the full road map
+[18:36] once again. Freelancer, start small, use
+[18:38] templates as Lego blocks, and land your
+[18:40] first $500 to $2,000 projects. Build
+[18:42] your confidence, your case studies, and
+[18:44] your proof. Consultant. Move up to
+[18:46] strategy. Audit businesses, identify
+[18:48] ROI, and design custom workflows. Charge
+[18:50] for the audit and then charge for the
+[18:51] implementation and start building
+[18:53] credibility through case studies and
+[18:55] content. Agency. Scale your consulting
+[18:57] practice by hiring developers and sales
+[18:58] support. Focus on audits, relationships,
+[19:00] and building your brand. With the right
+[19:02] team under you, you can push past a
+[19:03] million dollars a year. And then
+[19:05] finally, be a teacher. Share your
+[19:06] knowledge publicly through YouTube, free
+[19:08] communities, LinkedIn, paid memberships.
+[19:10] Teach unique, impressive automations
+[19:12] that prove your authority. is the
+[19:13] highest leverage play with the potential
+[19:15] for unlimited recurring revenue. So the
+[19:17] big picture, the journey isn't about
+[19:18] picking one model and skipping the rest.
+[19:20] It's about stacking skills in the right
+[19:21] order. Freelancing gets you proof,
+[19:23] consulting gets you credibility, agency
+[19:25] gets you scale, and teaching gets you
+[19:26] freedom. Each step prepares you for the
+[19:28] next. That's why trying to start with an
+[19:30] agency is a trap because once again,
+[19:31] you're trying to run before you can
+[19:33] walk. But if you follow the road map,
+[19:34] every step feels natural and your income
+[19:36] compounds as you climb. These stages are
+[19:38] pretty much the exact steps that I took.
+[19:40] Now, I have absolute confidence that you
+[19:41] can take everything that we just covered
+[19:43] today on your own and get results you
+[19:44] previously thought weren't possible. And
+[19:46] if that were your only option, it would
+[19:47] be a worthy path to take. But what if
+[19:49] there was another option? You see, from
+[19:51] here, you have two choices. The first
+[19:52] choice is to go at it alone. You can
+[19:54] piece together YouTube tutorials, look
+[19:56] at Reddit threads, and try to reverse
+[19:57] engineer what works. You may spend
+[19:59] months of trial and error, getting stuck
+[20:00] on a single technical glitch for days,
+[20:02] and wondering if you're even learning
+[20:04] the right things. So, what if there was
+[20:05] another way? What if I could play an
+[20:06] active role in your success, teaching
+[20:08] you and answering your questions? What
+[20:09] if you had my entire team of developers
+[20:11] to help you when you got stuck? How
+[20:12] would that change things for you? Do you
+[20:14] think in that situation I could empower
+[20:15] you with the resources at my disposal to
+[20:17] stack the deck in your favor and make
+[20:18] your success much more likely? So, let's
+[20:20] be clear. I'm not guaranteeing you're
+[20:22] going to make any money whatsoever. That
+[20:24] obviously all depends on your work
+[20:25] ethic. What I am guaranteeing is I can
+[20:27] make this path easier and faster for you
+[20:29] because I've already walked that path
+[20:30] myself. So, here's the thing. Everything
+[20:31] that I've shown you so far, it all fits
+[20:33] together and I've put everything I've
+[20:34] learned into one place. It's called AI
+[20:36] Automation Society Plus. But before I
+[20:38] tell you what's inside, I just want to
+[20:39] be clear. This isn't just another
+[20:40] course. It's a complete ecosystem. It's
+[20:42] designed for one purpose, to give you
+[20:44] the exact skills that equal money in the
+[20:46] AI economy. First, the foundation. We
+[20:48] call this agent zero. I start from zero.
+[20:50] How to think about AI, how to install
+[20:52] the tools, and how to build your first
+[20:54] automations from a blank canvas. Next,
+[20:56] we have the strategy, a course called 10
+[20:58] hours to 10 seconds. Because building an
+[20:59] automation is one thing, but knowing
+[21:01] what to build, that's everything. I'll
+[21:02] show you how to walk into any business,
+[21:04] find the process that wastes 10 hours a
+[21:06] week, and shrink it to 10 minutes.
+[21:07] That's how you justify charging $10,000
+[21:09] or more because you're selling ROI, not
+[21:12] just the tech. Then the proving ground.
+[21:14] We frequently run hackathons and
+[21:15] building challenges. The whole community
+[21:17] focuses on one type of automation. You
+[21:19] build alongside others, submit your
+[21:20] project, and the winner takes home a
+[21:22] cash prize. But even if you don't win,
+[21:24] you walk away with something way more
+[21:25] valuable, which is a brand new highle
+[21:27] automation for your portfolio. And of
+[21:29] course, the community aspect. Thousands
+[21:31] of members are already inside. It's the
+[21:33] most popular, fastest growing premium
+[21:34] tech community on school. People are
+[21:36] building, learning, and earning every
+[21:38] single day. Then finally, we have the
+[21:40] bonuses for annual members. If you join
+[21:41] on the annual plan, you also unlock the
+[21:43] oneperson AI automation agency. Inside
+[21:45] this playbook is my entire system for
+[21:47] landing your first clients and really
+[21:49] positioning yourself in a business
+[21:50] owner's mind as an AI expert. I give you
+[21:53] my discovery call scripts, ROI
+[21:54] calculators, and the proposal templates
+[21:56] that have closed over a million dollars
+[21:58] of deals for our AI partner business.
+[22:00] This isn't theory. It's my entire AI
+[22:02] partner blueprint. And you also get a
+[22:04] brand new YouTube growth course, a
+[22:05] playbook that I've used to grow my
+[22:06] channel and my school group to over
+[22:08] $150,000 per month of pure profit. And
+[22:11] this isn't going to be generic. I'm not
+[22:12] teaching you about the basics of
+[22:13] YouTube. I'll be talking about
+[22:14] specifically how to build an AI
+[22:16] automation YouTube channel and monetize
+[22:18] your expertise. All of this is included
+[22:20] for annual members. So, let me recap
+[22:21] real quick. You get agent zero
+[22:23] foundations. You get 10 hours to 10
+[22:24] seconds, the consulting framework. You
+[22:26] get the monthly hackathons, the proving
+[22:27] ground for your portfolio. You get the
+[22:29] community, the fastest growing network
+[22:31] of AI builders anywhere online. And if
+[22:32] you go annual, you get the oneperson AI
+[22:34] automation agency and the YouTube growth
+[22:36] course. But before you see the price,
+[22:38] there's one thing you need to know. The
+[22:39] price for this community is not static.
+[22:41] It goes up every few months. As we add
+[22:43] more value, we raise the price for new
+[22:44] members. It's the only way to reward our
+[22:46] early members. The price you see when
+[22:48] you click on the link is the lowest
+[22:49] price it will ever be. And when you join
+[22:51] today, you lock in that rate for life.
+[22:53] So, what does it take to get access to
+[22:54] this entire skill building system? The
+[22:56] link for that is down in the
+[22:57] description. Go there to see the special
+[22:59] pricing we've reserved for you. When you
+[23:01] get on that page, you'll see everything
+[23:02] we've talked about and you can get
+[23:03] started immediately. So, you can go to
+[23:04] that link right now. You'll also get a
+[23:06] huge discount when you sign up for
+[23:07] annual. So, not only am I giving you
+[23:09] more resources, but I'm charging less,
+[23:11] not more. The reason why I want to
+[23:13] reward people who are willing to make a
+[23:15] long-term commitment to their success
+[23:16] because that's what it takes. Depending
+[23:18] on when you're watching this, I'm also
+[23:19] rolling out advanced material on how to
+[23:21] go from building automation to building
+[23:22] custom software. You'll learn all the
+[23:24] technical skills necessary to build web
+[23:25] apps people can log into. It saves
+[23:27] information and you can charge ongoing
+[23:29] fees for access. Tomorrow, you're either
+[23:31] going to be digging around on YouTube
+[23:32] trying to figure everything out, or you
+[23:34] will be followed by systems and talking
+[23:35] with me directly inside the community
+[23:37] where I can guide you from a total
+[23:38] beginner to selling automation services
+[23:40] to eventually start your own YouTube
+[23:42] channel and community. So, you're not
+[23:43] just making a choice about buying a
+[23:45] membership. You're making a choice about
+[23:46] what your future's going to be like. A
+[23:48] year from now, your future will be
+[23:49] different depending on the decision you
+[23:50] make right now. So, I hope it's an
+[23:52] obvious choice. Click the link in the
+[23:53] description to learn more and appreciate
+[23:55] you guys listening to me today. I'll see
+[23:56] you inside. Thanks everyone.

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-09T08:30:46.847Z",
+  "entries": [
+    "api-patterns",
+    "n8n-code-python",
+    "n8n-mcp-tools-expert",
+    "n8n-node-configuration",
+    "n8n-workflow-patterns",
+    "supabase-automation"
+  ]
+}
