@@ -71,29 +71,29 @@
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.4,
       "position": [
-        0,
-        0
+        896,
+        304
       ],
-      "id": "ad093e33-04c3-4799-8208-725e96ed9525",
+      "id": "1f2a4704-ac38-40a2-9761-afe934c580c7",
       "name": "On form submission",
-      "webhookId": "YOUR_WEBHOOK_ID_1"
+      "webhookId": "bad1a79f-83da-44ff-b619-08350b71f75a"
     },
     {
       "parameters": {
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "YOUR_GOOGLE_SHEET_ID",
+          "value": "1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A",
           "mode": "list",
           "cachedResultName": "Form Submission Outbound Caller",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
           "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit#gid=0"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A/edit#gid=0"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -254,17 +254,11 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        464,
-        -80
+        1360,
+        224
       ],
-      "id": "ef74d372-f563-4c31-bcb4-5cce5c8fc34b",
-      "name": "Log Incorrect Phone",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
-          "name": "Google Sheets account"
-        }
-      }
+      "id": "9d700895-76ef-47e9-ac93-cbc9b35501f9",
+      "name": "Log Incorrect Phone"
     },
     {
       "parameters": {
@@ -293,23 +287,23 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        304,
-        0
+        1200,
+        304
       ],
-      "id": "6dd0c0c5-36ff-4e1f-9f12-d77f4ef26a41",
+      "id": "ed4aa81c-70c4-4be9-89c8-341c05d0052e",
       "name": "Incorrect Phone?"
     },
     {
       "parameters": {
-        "jsCode": "// Get all input items\nconst items = $input.all();\n\n// Process each item\nreturn items.map(item => {\n  const phoneNumber = item.json['Phone Number'];\n  \n  // Convert to string and remove all non-digit characters\n  let cleanNumber = String(phoneNumber).replace(/\\D/g, '');\n  \n  // Handle different cases\n  let standardizedNumber;\n  \n  if (cleanNumber.length === 10) {\n    // Perfect - just 10 digits\n    standardizedNumber = cleanNumber;\n  } else if (cleanNumber.length === 11 && cleanNumber.startsWith('1')) {\n    // US number with country code +1\n    standardizedNumber = cleanNumber.slice(1);\n  } else {\n    // Wrong format - too many, too few, or wrong country code\n    standardizedNumber = 'incorrect format';\n  }\n  \n  // Return the item with standardized phone number\n  return {\n    json: {\n      ...item.json,\n      'Phone Number': standardizedNumber\n    }\n  };\n});"
+        "jsCode": "// Get all input items\nconst items = $input.all();\n\n// Process each item\nreturn items.map(item => {\n  const originalInput = String(item.json['Phone Number'] || '').trim();\n  \n  // Convert to string and remove all non-digit characters\n  let cleanNumber = originalInput.replace(/\\D/g, '');\n  \n  let standardizedNumber = 'incorrect format';\n  \n  // If the original input started with a plus sign, preserve international routing\n  if (originalInput.startsWith('+')) {\n    if (cleanNumber.startsWith('63') && cleanNumber.length === 12) {\n      standardizedNumber = '+' + cleanNumber;\n    } else if (cleanNumber.startsWith('1') && cleanNumber.length === 11) {\n      standardizedNumber = '+' + cleanNumber;\n    } else {\n      standardizedNumber = '+' + cleanNumber;\n    }\n  } else {\n    // Domestic or un-prefixed numbers\n    if (cleanNumber.startsWith('09') && cleanNumber.length === 11) {\n      // Domestic PH mobile: 09171234567 -> +639171234567\n      standardizedNumber = '+63' + cleanNumber.slice(1);\n    } else if (cleanNumber.startsWith('639') && cleanNumber.length === 12) {\n      // PH mobile starting with 639: 639171234567 -> +639171234567\n      standardizedNumber = '+' + cleanNumber;\n    } else if (cleanNumber.startsWith('1') && cleanNumber.length === 11) {\n      // US number with leading 1: 14155552671 -> +14155552671\n      standardizedNumber = '+' + cleanNumber;\n    } else if (cleanNumber.length === 10) {\n      if (cleanNumber.startsWith('9')) {\n        // PH mobile without leading 0: 9473702512 -> +639473702512\n        standardizedNumber = '+63' + cleanNumber;\n      } else {\n        // 10-digit number defaults to US: 4155552671 -> +14155552671\n        standardizedNumber = '+1' + cleanNumber;\n      }\n    } else {\n      standardizedNumber = 'incorrect format';\n    }\n  }\n  \n  return {\n    json: {\n      ...item.json,\n      'Phone Number': standardizedNumber\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        160,
-        0
+        1056,
+        304
       ],
-      "id": "9bb2b9f1-9a01-4974-a4f6-dec5a3f784f6",
+      "id": "c11b4605-8384-40d8-9dd2-538474ee272f",
       "name": "Standardize Data"
     },
     {
@@ -320,23 +314,17 @@
         "genericAuthType": "httpBearerAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"assistantId\": \"YOUR ASSISTANT ID\",\n  \"phoneNumberId\": \"YOUR PHONE NUMBER ID\",\n  \"customers\": [\n    {\n      \"number\": \"+1{{ $json['Phone Number'] }}\"\n    }\n  ],\n  \"assistantOverrides\": {\n    \"variableValues\": {\n      \"lead_name\": \"{{ $json.Name }}\",\n      \"lead_company_name\": \"{{ $json['Company Name'] }}\",\n      \"lead_request\": \"{{ $json.Request }}\"\n    }\n  }\n}\n",
+        "jsonBody": "={{ { \"assistantId\": \"cba6dea6-8eb4-43cb-90f3-5f0ab228a972\", \"phoneNumberId\": \"79966c1a-008a-48c9-b0d8-3d59cee58106\", \"customers\": [ { \"number\": $json[\"Phone Number\"] } ], \"assistantOverrides\": { \"variableValues\": { \"lead_name\": $json[\"Name\"], \"lead_company_name\": $json[\"Company Name\"], \"lead_request\": $json[\"Request\"] } } } }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        464,
-        96
+        1360,
+        400
       ],
-      "id": "bd6f9d29-d3b5-49dc-a548-ea10ede9aece",
-      "name": "Call Lead",
-      "credentials": {
-        "httpBearerAuth": {
-          "id": "YOUR_VAPI_CREDENTIAL_ID",
-          "name": "Vapi"
-        }
-      }
+      "id": "b4e1bcd5-c492-4c96-88e7-83e6b3e602a0",
+      "name": "Call Lead"
     },
     {
       "parameters": {
@@ -345,12 +333,12 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        608,
-        0
+        1504,
+        304
       ],
-      "id": "d03a0331-d6a8-4b9c-aa07-4a1a4fcf7cd2",
+      "id": "ce553c72-c48d-4595-8d6c-d03c960c4677",
       "name": "Wait",
-      "webhookId": "YOUR_WEBHOOK_ID_2"
+      "webhookId": "7f524fb2-74b6-4b8e-b9eb-8fbc78c891fa"
     },
     {
       "parameters": {
@@ -362,18 +350,12 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        752,
-        0
+        1648,
+        304
       ],
-      "id": "64dfa049-c707-43e5-b6bf-8fd84266bdb2",
+      "id": "baa019d9-2b87-4fa3-a8f6-21ffbb7e973c",
       "name": "Get Call Details",
-      "executeOnce": true,
-      "credentials": {
-        "httpBearerAuth": {
-          "id": "YOUR_VAPI_CREDENTIAL_ID",
-          "name": "Vapi"
-        }
-      }
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -402,10 +384,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        1216,
-        -80
+        2112,
+        224
       ],
-      "id": "c7a36779-39fe-4310-8c8d-1cab38c68eb3",
+      "id": "f563dfc2-438b-422a-825a-9c360a17ba96",
       "name": "Voicemail?"
     },
     {
@@ -435,10 +417,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        1040,
-        0
+        1936,
+        304
       ],
-      "id": "7d7d771f-9b44-46ef-8856-cccb5a6b808e",
+      "id": "9e9cdccf-75a8-4ebe-af50-c9959ec18bdb",
       "name": "Ended?"
     },
     {
@@ -448,29 +430,29 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1216,
-        80
+        2112,
+        384
       ],
-      "id": "d5d6ef3d-9969-471a-87d8-641be35068c5",
+      "id": "2d7b85e3-12ff-48ed-aaf8-373b2a13ce2c",
       "name": "Polling",
-      "webhookId": "YOUR_WEBHOOK_ID_3"
+      "webhookId": "2c866267-82c9-4178-8f2f-fc4040a7fb22"
     },
     {
       "parameters": {
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "YOUR_GOOGLE_SHEET_ID",
+          "value": "1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A",
           "mode": "list",
           "cachedResultName": "Form Submission Outbound Caller",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
           "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit#gid=0"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A/edit#gid=0"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -637,27 +619,21 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1392,
-        -80
+        2288,
+        224
       ],
-      "id": "7ca27023-51b0-41df-a5e1-25eed9343dc8",
-      "name": "Log Voicemal",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
-          "name": "Google Sheets account"
-        }
-      }
+      "id": "da28944f-bc11-4272-9a51-ffffd1957b00",
+      "name": "Log Voicemal"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        896,
-        0
+        1792,
+        304
       ],
-      "id": "4d4f3eb0-4d8d-4cb1-8702-5ab148a2944c",
+      "id": "da5b5d65-ef2e-4b38-be3c-82abf7cb94b5",
       "name": "Limit"
     },
     {
@@ -665,17 +641,17 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "YOUR_GOOGLE_SHEET_ID",
+          "value": "1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A",
           "mode": "list",
           "cachedResultName": "Form Submission Outbound Caller",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": "gid=0",
           "mode": "list",
           "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID/edit#gid=0"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1bMlbahInYC1Thyymu2NPzvqqYK4AuH9bx2L_WQtOT2A/edit#gid=0"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -688,150 +664,150 @@
             "Role": "={{ $('On form submission').item.json.Role }}",
             "Request": "={{ $('On form submission').item.json.Request }}",
             "Company Size": "={{ $('On form submission').item.json['Company Size'] }}",
-            "Intent?": "={{ $json.artifact.structuredOutputs['30896ce1-9f84-41b6-871b-65321b41b6fd'].result }}",
-            "Past Experience": "={{ $json.artifact.structuredOutputs['783e0f59-40c2-4e67-b14f-ba071286ac87'].result }}",
-            "Budget": "={{ $json.artifact.structuredOutputs['78f6dbcc-96c0-470c-b0a6-c35976bc8e8e'].result }}",
-            "Status": "=Complete",
-            "Motivation": "={{ $json.artifact.structuredOutputs['f73696c9-a75f-4ae0-8e49-2e42e5c7f0b2'].result }}",
-            "Urgency": "={{ $json.artifact.structuredOutputs['fd64736f-7f53-49b3-817a-252cf95537d6'].result }}",
-            "Service Interest": "={{ $json.artifact.structuredOutputs['fcf064be-67de-47ef-8df9-d5496674b887'].result }}"
+            "Intent?": "={{ $json.artifact.structuredOutputs['d6459ce7-5104-4727-a62f-2ef523be641b'].result }}",
+            "Past Experience": "={{ $json.artifact.structuredOutputs['bebd0925-e04f-46d0-8bb8-aa57bdbfa7cc'].result }}",
+            "Budget": "={{ $json.artifact.structuredOutputs['0335cf29-96d3-4efd-b20d-9fdaf0a9148a'].result }}",
+            "Status": "={{ $json.artifact.structuredOutputs['27f00fbf-c472-4e0a-8e66-0c8db4e46a4b'].result }}",
+            "Motivation": "={{ $json.artifact.structuredOutputs['306135bb-63e2-4dc1-b4b4-58e1fd603559'].result }}",
+            "Urgency": "={{ $json.artifact.structuredOutputs['300fa434-218e-4629-ba91-60cc62f76e39'].result }}",
+            "Service Interest": "={{ $json.artifact.structuredOutputs['683af6d7-2a4d-4c5b-a90c-155170996655'].result }}"
           },
           "matchingColumns": [],
           "schema": [
             {
-              "id": "Date",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Date",
+              "id": "Date",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Name",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Name",
+              "id": "Name",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Phone",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Phone",
+              "id": "Phone",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Email",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Email",
+              "id": "Email",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Company",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Company",
+              "id": "Company",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Role",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Role",
+              "id": "Role",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Request",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Request",
+              "id": "Request",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Company Size",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Company Size",
+              "id": "Company Size",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Service Interest",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Service Interest",
+              "id": "Service Interest",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Motivation",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Motivation",
+              "id": "Motivation",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Urgency",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Urgency",
+              "id": "Urgency",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Past Experience",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Past Experience",
+              "id": "Past Experience",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Budget",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Budget",
+              "id": "Budget",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Intent?",
+              "canBeUsedToMatch": true,
+              "defaultMatch": false,
+              "display": true,
               "displayName": "Intent?",
+              "id": "Intent?",
               "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "type": "string"
             },
             {
-              "id": "Status",
-              "displayName": "Status",
-              "required": false,
+              "canBeUsedToMatch": true,
               "defaultMatch": false,
               "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "displayName": "Status",
+              "id": "Status",
+              "required": false,
+              "type": "string"
             }
           ],
           "attemptToConvertTypes": false,
@@ -842,35 +818,28 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1392,
-        80
+        2288,
+        384
       ],
-      "id": "20f7efd3-42b0-4680-97b9-502d4e12cf48",
-      "name": "Log Complete",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
-          "name": "Google Sheets account"
-        }
-      }
+      "id": "c09a7bb8-da9a-45cc-b458-1beb6c39e94b",
+      "name": "Log Complete"
     },
     {
       "parameters": {
-        "content": "# 🛠️ Setup Guide  \n**Author:** [Nate Herk](https://www.youtube.com/@nateherk)\n\nFollow the steps below to get this workflow up and running:\n\n---\n\n### ✅ Step 1: Add Your [VAPI](https://vapi.ai/) API Key  \n- Grab your API key from VAPI  \n- In n8n, create a **Generic Credential** using **Bearer Auth**  \n- Paste your VAPI API key into the **two HTTP Request** nodes that require VAPI\n\n---\n\n### ✅ Step 2: Add the System Prompt to Your VAPI Assistant  \n- Open your VAPI Assistant settings  \n- Copy/paste the system prompt from this doc:  \n  👉 **System Prompt (Copy Link):** [Google Doc](https://docs.google.com/document/u/1/d/1IQV-azxjKCdrxhqOespddFFKEJY8CXjObINN4xFn3es/copy)\n\n---\n\n### ✅ Step 3: Connect a Phone Number in VAPI  \n- Connect (or purchase) a phone number inside VAPI  \n- In the **Call Lead** HTTP Request node, make sure you set:  \n  - **Your Assistant ID**  \n  - **Your Phone Number ID**\n\n---\n\n### ✅ Step 4: Connect the Google Sheet Template  \n- Make a copy of the template here:  \n  👉 **Google Sheet Template (Copy Link):** [Google Sheet](https://docs.google.com/spreadsheets/u/1/d/YOUR_GOOGLE_SHEET_ID/copy)  \n- Connect your Google credentials in n8n  \n- Point the workflow to **your copied sheet** (not the original template)\n\n---\n\n### 💡 Final Check  \nBefore running, confirm:\n- VAPI key is present in both required HTTP Request nodes  \n- Assistant ID + Phone Number ID are correctly set in **Call Lead**  \n- Google Sheet connection points to your copied template\n",
+        "content": "# \ud83d\udee0\ufe0f Setup Guide  \n**Author:** [Nate Herk](https://www.youtube.com/@nateherk)\n\nFollow the steps below to get this workflow up and running:\n\n---\n\n### \u2705 Step 1: Add Your [VAPI](https://vapi.ai/) API Key  \n- Grab your API key from VAPI  \n- In n8n, create a **Generic Credential** using **Bearer Auth**  \n- Paste your VAPI API key into the **two HTTP Request** nodes that require VAPI\n\n---\n\n### \u2705 Step 2: Add the System Prompt to Your VAPI Assistant  \n- Open your VAPI Assistant settings  \n- Copy/paste the system prompt from this doc:  \n  \ud83d\udc49 **System Prompt (Copy Link):** [Google Doc](https://docs.google.com/document/u/1/d/1IQV-azxjKCdrxhqOespddFFKEJY8CXjObINN4xFn3es/copy)\n\n---\n\n### \u2705 Step 3: Connect a Phone Number in VAPI  \n- Connect (or purchase) a phone number inside VAPI  \n- In the **Call Lead** HTTP Request node, make sure you set:  \n  - **Your Assistant ID**  \n  - **Your Phone Number ID**\n\n---\n\n### \u2705 Step 4: Connect the Google Sheet Template  \n- Make a copy of the template here:  \n  \ud83d\udc49 **Google Sheet Template (Copy Link):** [Google Sheet](https://docs.google.com/spreadsheets/u/1/d/1NEEmrQhRC0cGLyYKa0qTr5e72Iub38_tZFs4l37PwTk/copy)  \n- Connect your Google credentials in n8n  \n- Point the workflow to **your copied sheet** (not the original template)\n\n---\n\n### \ud83d\udca1 Final Check  \nBefore running, confirm:\n- VAPI key is present in both required HTTP Request nodes  \n- Assistant ID + Phone Number ID are correctly set in **Call Lead**  \n- Google Sheet connection points to your copied template\n",
         "height": 1008,
         "width": 784
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -896,
-        -304
+        0,
+        0
       ],
-      "id": "7b6b769a-3986-4335-9bb2-e5ba755ffd59",
+      "id": "c99a3fe8-57b8-4a75-a61b-6ec9a63399fd",
       "name": "Sticky Note"
     }
   ],
-  "pinData": {},
   "connections": {
     "On form submission": {
       "main": [
@@ -1002,18 +971,25 @@
           }
         ]
       ]
+    },
+    "Log Voicemal": {
+      "main": [
+        []
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1",
-    "availableInMCP": false
+    "binaryMode": "separate",
+    "availableInMCP": true
   },
-  "versionId": "fbb887e1-8359-4269-ad39-234c4c4e2317",
+  "versionId": "d2b60bc3-7939-402d-bef5-d97a816085fe",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "95e5a8c2e51c83e33b232ea792bbe3f063c094c33d9806a5565cb31759e1ad39"
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
   },
-  "id": "L1F1V8rMMA2IXtTjbfiYm",
+  "id": "8IJ6SfcE5rMZS3RF",
   "tags": []
 }

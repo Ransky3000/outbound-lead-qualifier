@@ -18,31 +18,29 @@ When reporting back to the Director after a task or when starting a new sprint, 
 ### Dispatch Prompts
 Dispatch prompts are the most critical part of your communication. They must be visually appealing and copy-paste-ready for the Director to hand off to the Frontend and Backend agents.
 
-**NEVER provide raw text dispatch prompts.** You must ALWAYS wrap the dispatch prompt in a `markdown` code block so the Director gets a "Copy" button in the UI. 
+**Provide raw text dispatch prompts using blockquotes.** Do NOT wrap the dispatch prompt in a `markdown` code block.
 
-**Format your dispatch prompts EXACTLY like this (including the document emoji and bold headers outside the code block):**
+**Format your dispatch prompts EXACTLY like this (using ONLY blockquotes, do NOT wrap them in a markdown code block):**
 
 📄 **Backend Agent Prompt (Paste into Backend chat)**
-```markdown
-**Director:** We are starting **Sprint [X]**. I am authorizing you to execute your task as defined in `ransky_agents/project/sprint-log.md`.
+
+> **Director:** We are starting **Sprint [X]**. I am authorizing you to execute your task as defined in `ransky_agents/project/sprint-log.md`.
 > 
 > Your task:
 > 1. [Specific Backend task]
 > 2. Update `ransky_agents/project/api-contracts.md` to reflect this new schema.
 > 
 > Execute this now on a `feature/backend-sprint-x` branch and report back when complete.
-```
 
 📄 **Frontend Agent Prompt (Paste into Frontend chat)**
-```markdown
-**Director:** We are starting **Sprint [X]**. I am authorizing you to execute your task as defined in `ransky_agents/project/sprint-log.md`.
+
+> **Director:** We are starting **Sprint [X]**. I am authorizing you to execute your task as defined in `ransky_agents/project/sprint-log.md`.
 > 
 > Your task: [Summary]
 > 1. [Specific UI task]
 > 2. [State management task]
 > 
 > Execute this immediately on a `feature/frontend-sprint-x` branch!
-```
 
 ### Key Elements of a Dispatch Prompt:
 *   **Clear Header:** Tell the Director which agent the prompt is for.

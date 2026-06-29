@@ -1,4 +1,4 @@
-# Vapi Assistant Configuration
+# Vapi Assistant Configuration — Elliot (Lead Qualifier)
 
 ## Assistant Settings
 
@@ -22,8 +22,8 @@
 
 | ID | Value | Where to Get It |
 |----|-------|-----------------|
-| `assistantId` | `YOUR_ASSISTANT_ID` | Vapi Dashboard → Assistants → Copy ID |
-| `phoneNumberId` | `YOUR_PHONE_NUMBER_ID` | Vapi Dashboard → Phone Numbers → Copy ID |
+| `assistantId` | `cba6dea6-8eb4-43cb-90f3-5f0ab228a972` | Vapi Dashboard → Assistants → Copy ID |
+| `phoneNumberId` | `2ac88210-0b54-48e7-b6e5-f78c12adde5c` | Vapi Dashboard → Phone Numbers → Copy ID |
 | Vapi API Key | *(stored in n8n credentials, NOT here)* | Vapi Dashboard → API Keys |
 
 ## Structured Outputs
@@ -32,8 +32,8 @@ See [structured-outputs.md](./structured-outputs.md) for field definitions.
 
 ## Status
 
-- [ ] Assistant created in Vapi dashboard
-- [ ] System prompt configured
-- [ ] Structured outputs added
-- [ ] Phone number assigned
+- [x] Assistant created in Vapi dashboard
+- [x] System prompt configured
+- [x] Structured outputs added
+- [x] Phone number assigned
 - [ ] First test call completed
