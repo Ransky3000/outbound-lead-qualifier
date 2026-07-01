@@ -21,7 +21,7 @@
 
 | ID | Value | Where to Get It |
 |----|-------|-----------------|
-| `assistantId` | *(Fill after creating in Vapi dashboard)* | Vapi Dashboard → Assistants → Copy ID |
+| `assistantId` | `b95acc4e-94a4-475c-8073-67f5748551cb` | Vapi Dashboard → Assistants → Copy ID |
 | `phoneNumberId` | *(Fill after assigning in Vapi dashboard)* | Vapi Dashboard → Phone Numbers → Copy ID |
 
 ## Structured Outputs
