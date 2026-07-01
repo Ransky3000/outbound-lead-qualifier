@@ -1,15 +1,25 @@
 # Project Sprint Log
 
-## Current Sprint: M2 — HVAC B2C Transition
+## Current Sprint: M3 — Testing & Go-Live
 
 | Agent | Status | Current Task |
 |-------|--------|--------------|
-| **Senior Dev** | `ACTIVE` | Designing Layla B2C agent prompt and supervising n8n integration |
-| **Backend** | `IDLE` | Completed HVAC n8n workflow refactor & schemas - Awaiting QA |
+| **Senior Dev** | `ACTIVE` | Designing end-to-end verification plan |
+| **Backend** | `IDLE` | Sprint M2 tasks completed |
 
 ## Task Details
 
-### M2 Tasks (Backend Dev)
+### M3 Tasks
+- [ ] Submit a test form via n8n form trigger
+- [ ] Answer the Vapi outbound call and verify Layla's conversational flow
+- [ ] Verify call data is successfully extracted and updated in the "CRM - HVAC" Google Sheet
+- [ ] Activate the workflow for production usage
+
+---
+
+## Completed Sprints
+
+### M2 — HVAC B2C Transition
 - [x] Read `docs/use-cases/n8n_HVAC_Backend_Ticket.md` to review the required node configurations
 - [x] Update the `On form submission` node in `Outbound Call - HVAC` to collect B2C HVAC inputs
 - [x] Update the `Call Lead` HTTP request payload to send `customer_name`, `service_type`, `request_details`, and `service_location`
@@ -17,10 +27,6 @@
 - [x] Map the new Vapi structured output UUIDs in the `Log Complete` node
 - [x] Export the updated workflow JSON to `workflows/outbound-call-hvac.json`
 - [x] Update `ransky_agents/project/api-contracts.md` with the new Google Sheets schema and Vapi payloads
-
----
-
-## Completed Sprints
 
 ### M1 — Vapi Setup & Initial Configuration
 - [x] Read `reference/outbound_call_agent_context.md` for project goal

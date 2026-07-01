@@ -9,3 +9,19 @@ credentials/
 *.key
 *.pem
 client_secret*.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Agent Directory
+.agents/
+list_scratch.py
+scratch_transcribe.py
+inspect_completed_call.py
+
+# Audio recordings
+*.wav
+
+# Scratch transcripts
+scratch_transcription.txt
