@@ -15,13 +15,11 @@
 **Request Body:**
 ```json
 {
-  "assistantId": "cba6dea6-8eb4-43cb-90f3-5f0ab228a972",
+  "assistantId": "b95acc4e-94a4-475c-8073-67f5748551cb",
   "phoneNumberId": "79966c1a-008a-48c9-b0d8-3d59cee58106",
-  "customers": [
-    {
-      "number": "+1<10_DIGIT_NUMBER>"
-    }
-  ],
+  "customer": {
+    "number": "+1<10_DIGIT_NUMBER>"
+  },
   "assistantOverrides": {
     "variableValues": {
       "customer_name": "<from form>",
@@ -63,15 +61,13 @@
 
 ## Vapi Structured Output UUIDs
 
-> ⚠️ Replace these with YOUR UUIDs after creating structured outputs in Vapi dashboard.
-
 | Field | UUID | Path in Response |
 |-------|------|-----------------|
-| `hvac_status` | `<hvac_status_uuid>` | `artifact.structuredOutputs['<hvac_status_uuid>'].result` |
-| `hvac_urgency_level` | `<hvac_urgency_level_uuid>` | `artifact.structuredOutputs['<hvac_urgency_level_uuid>'].result` |
-| `hvac_issue_details` | `<hvac_issue_details_uuid>` | `artifact.structuredOutputs['<hvac_issue_details_uuid>'].result` |
-| `hvac_installation_scope` | `<hvac_installation_scope_uuid>` | `artifact.structuredOutputs['<hvac_installation_scope_uuid>'].result` |
-| `hvac_preferred_time_slot` | `<hvac_preferred_time_slot_uuid>` | `artifact.structuredOutputs['<hvac_preferred_time_slot_uuid>'].result` |
+| `hvac_status` | `28e67b57-0738-49c4-aefe-54294c5581a5` | `artifact.structuredOutputs['28e67b57-0738-49c4-aefe-54294c5581a5'].result` |
+| `hvac_urgency_level` | `b61a80da-fb15-45b1-b985-d62b4396c059` | `artifact.structuredOutputs['b61a80da-fb15-45b1-b985-d62b4396c059'].result` |
+| `hvac_issue_details` | `93ff5f79-450c-4018-a438-8cd9d2e66454` | `artifact.structuredOutputs['93ff5f79-450c-4018-a438-8cd9d2e66454'].result` |
+| `hvac_installation_scope` | `e853f166-45ca-483a-a995-369b8b933f6e` | `artifact.structuredOutputs['e853f166-45ca-483a-a995-369b8b933f6e'].result` |
+| `hvac_preferred_time_slot` | `2ac66287-2830-44b4-961c-efa6d2782351` | `artifact.structuredOutputs['2ac66287-2830-44b4-961c-efa6d2782351'].result` |
 
 ---
 
