@@ -2,6 +2,7 @@ node_modules/
 .env
 .env.local
 .env.*
+!.env.example
 .DS_Store
 dist/
 build/
@@ -14,14 +15,16 @@ client_secret*.json
 __pycache__/
 *.pyc
 
-# Agent Directory
-.agents/
-list_scratch.py
-scratch_transcribe.py
-inspect_completed_call.py
+# Claude Code
+.mcp.json
+.claude/
 
 # Audio recordings
-*.wav
 
-# Scratch transcripts
-scratch_transcription.txt
+# Local-only scratch / research (not for public repo)
+video-use/
+Demo recording plan/
+reference/
+docs/Demo Materials/*.mp4
+docs/Demo Materials/Screenshots from demo/
+docs/Demo Materials/Wireframe.excalidraw
