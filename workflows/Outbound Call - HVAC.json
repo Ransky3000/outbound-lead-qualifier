@@ -1,0 +1,1046 @@
+{
+  "name": "Outbound Call - HVAC",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "e68a68dc-720b-423e-84f5-1b7aa9238daa",
+              "leftValue": "={{ $json.fields.Phone }}",
+              "rightValue": "incorrect format",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1952,
+        96
+      ],
+      "id": "05d38d93-ea00-41f6-903a-3479264cc331",
+      "name": "Incorrect Phone?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items\nconst items = $input.all();\n\n// Process each item\nreturn items.map(item => {\n  const body = item.json.body || {};\n  \n  const originalName = body.customer_name || item.json['Full Name'] || '';\n  const originalPhone = body.customer_phone || item.json['Phone Number'] || '';\n  const originalEmail = body.customer_email || item.json['Email Address'] || '';\n  const originalLocation = body.service_location || item.json['Service Location'] || '';\n  const originalServiceType = body.service_type || item.json['Service Type'] || '';\n  const originalDetails = body.request_details || item.json['How can we help you?'] || '';\n\n  const originalInput = String(originalPhone).trim();\n  let cleanNumber = originalInput.replace(/\\D/g, '');\n  let standardizedNumber = 'incorrect format';\n  \n  if (originalInput.startsWith('+')) {\n    standardizedNumber = '+' + cleanNumber;\n  } else {\n    if (cleanNumber.startsWith('09') && cleanNumber.length === 11) {\n      standardizedNumber = '+63' + cleanNumber.substring(1);\n    } else if (cleanNumber.startsWith('639') && cleanNumber.length === 12) {\n      standardizedNumber = '+' + cleanNumber;\n    } else if (cleanNumber.startsWith('1') && cleanNumber.length === 11) {\n      standardizedNumber = '+' + cleanNumber;\n    } else if (cleanNumber.length === 10) {\n      if (cleanNumber.startsWith('9')) {\n        standardizedNumber = '+63' + cleanNumber;\n      } else {\n        standardizedNumber = '+1' + cleanNumber;\n      }\n    } else {\n      standardizedNumber = 'incorrect format';\n    }\n  }\n  \n  return {\n    json: {\n      'Full Name': originalName.trim(),\n      'Phone Number': standardizedNumber,\n      'Email Address': originalEmail.trim(),\n      'Service Location': originalLocation.trim(),\n      'Service Type': originalServiceType.trim(),\n      'How can we help you?': originalDetails.trim()\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1648,
+        160
+      ],
+      "id": "540eeef3-f280-4523-8e79-00f4b512ee34",
+      "name": "Standardize Data"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.vapi.ai/call",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"assistantId\": \"b95acc4e-94a4-475c-8073-67f5748551cb\", \"phoneNumberId\": \"79966c1a-008a-48c9-b0d8-3d59cee58106\", \"customer\": { \"number\": $('Standardize Data').item.json[\"Phone Number\"] }, \"assistantOverrides\": { \"variableValues\": { \"customer_name\": $('Standardize Data').item.json[\"Full Name\"], \"service_type\": $('Standardize Data').item.json[\"Service Type\"], \"request_details\": $('Standardize Data').item.json[\"How can we help you?\"], \"service_location\": $('Standardize Data').item.json[\"Service Location\"] } } } }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2112,
+        160
+      ],
+      "id": "a8bdd380-3665-49dc-9a0a-575089876bd0",
+      "name": "Call Lead",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "rG7QjUi6MqYZySJg",
+          "name": "Vapi Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1664,
+        368
+      ],
+      "id": "5f202e1d-5435-484a-9e23-bcc01f1dd276",
+      "name": "Wait",
+      "webhookId": "f056e835-9c18-4c89-9e27-19a4748afaf3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "73716a76-22fa-4f8c-880f-b76350b436f9",
+              "leftValue": "={{ $json.endedReason }}",
+              "rightValue": "voicemail",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2304,
+        272
+      ],
+      "id": "3837c911-86c0-443f-a2ba-6e07f1e70eae",
+      "name": "Voicemail?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "30c7ebf4-6de9-49f3-9a27-b7f3a7e2b558",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "ended",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2112,
+        368
+      ],
+      "id": "b7e22a51-57ff-40d6-8e3f-bab47685e021",
+      "name": "Ended?"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2272,
+        416
+      ],
+      "id": "9163508a-ac14-49a2-b954-b55c22aed568",
+      "name": "Polling",
+      "webhookId": "503defda-5f76-4f58-af42-5c1e8d843fb3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1968,
+        368
+      ],
+      "id": "6039041f-dc75-4333-a026-38aeabe6ee47",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "content": "# OUTPUT\n",
+        "height": 656,
+        "width": 336,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2576,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "180b52e6-6f62-493f-a144-8c58910fa513",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# PROCESS\n",
+        "height": 656,
+        "width": 976,
+        "color": "#FEDF6C"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1600,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "fccf215d-92ff-4c4c-8131-6d4a3f7b2e01",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# INPUT\n",
+        "height": 656,
+        "width": 288,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1312,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "fd77f25e-559f-4f98-921e-19f7b340ef1f",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "537c23ca-72fe-421a-ad1d-0b39c02b9a74",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        1408,
+        256
+      ],
+      "id": "d8b691b3-315a-42d6-8cfa-8d4e7ce42c25",
+      "name": "Form Submitted",
+      "webhookId": "537c23ca-72fe-421a-ad1d-0b39c02b9a74"
+    },
+    {
+      "parameters": {
+        "jsCode": "const structuredOutputs = $json.artifact?.structuredOutputs || {};\n\n// Vapi keys structured outputs by UUID, but each entry carries its own\n// stable 'name' — look up by name so this survives assistant rebuilds\n// that regenerate UUIDs (see docs/api-contracts.md).\nconst get = (name) => {\n  const entry = Object.values(structuredOutputs).find((v) => v?.name === name);\n  return entry?.result || '';\n};\n\nconst scope = get('scope_of_call');\nconst type = get('system_type');\nconst qty = get('unit_quantity');\nconst time = get('preferred_time');\nconst urgency = get('urgency');\nconst callStatus = get('call_status');\n\nlet jobDetails = `${scope}\\n`;\nif (type) jobDetails += `• System Type: ${type}\\n`;\nif (qty) jobDetails += `• Unit Quantity: ${qty}\\n`;\nif (time) jobDetails += `• Preferred time: ${time}\\n`;\n\nreturn {\n  json: {\n    ...$json,\n    jobDetails: jobDetails.trim(),\n    _vapi_urgency: urgency,\n    _vapi_system_type: type,\n    _vapi_call_status: callStatus\n  }\n};"
+      },
+      "id": "8fb0d43d-6f23-4f68-9d64-6164df24f32b",
+      "name": "Format Job Details",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2448,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "base": {
+          "__rl": true,
+          "cachedResultName": "Apex HVAC CRM",
+          "mode": "list",
+          "value": "appTgp7XEjZ9A9nE3"
+        },
+        "table": {
+          "__rl": true,
+          "cachedResultName": "Contacts",
+          "mode": "list",
+          "value": "tblSQb7u5OkLPdXs9"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('Standardize Data').item.json[\"Email Address\"] }}",
+            "Name": "={{ $('Standardize Data').item.json[\"Full Name\"] }}",
+            "Phone": "={{ $('Standardize Data').item.json[\"Phone Number\"] }}"
+          },
+          "matchingColumns": [
+            "Phone"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": true,
+              "removed": false
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Requests",
+              "displayName": "Service Requests",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "04750218-4f22-42be-b973-42d867a62f36",
+      "name": "Upsert Contact",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        1792,
+        160
+      ],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "JmMPODwSKkXQoluh",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "mode": "list",
+          "value": "appTgp7XEjZ9A9nE3",
+          "cachedResultName": "Apex HVAC CRM"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "tblOJ99hfaDq9dcAc",
+          "cachedResultName": "Service Requests"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Call Status": "wrong_number",
+            "Contact": "={{ [$('Upsert Contact').item.json.id] }}",
+            "Date": "={{ $now.toISODate() }}",
+            "Service Location": "={{ $('Standardize Data').item.json[\"Service Location\"] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Contact",
+              "displayName": "Contact",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Call Status",
+              "displayName": "Call Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "wrong_number",
+                  "value": "wrong_number"
+                },
+                {
+                  "name": "call_back",
+                  "value": "call_back"
+                },
+                {
+                  "name": "complete",
+                  "value": "complete"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Type",
+              "displayName": "Service Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Repair",
+                  "value": "Repair"
+                },
+                {
+                  "name": "Maintenance",
+                  "value": "Maintenance"
+                },
+                {
+                  "name": "Installation",
+                  "value": "Installation"
+                },
+                {
+                  "name": "Inspection",
+                  "value": "Inspection"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Urgency",
+              "displayName": "Urgency",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Details",
+              "displayName": "Job Details",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Location",
+              "displayName": "Service Location",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "id": "d1d468fc-d7cc-4582-a350-465be4fc92b6",
+      "name": "Wrong Number",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        2704,
+        80
+      ],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "JmMPODwSKkXQoluh",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "mode": "list",
+          "value": "appTgp7XEjZ9A9nE3",
+          "cachedResultName": "Apex HVAC CRM"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "tblOJ99hfaDq9dcAc",
+          "cachedResultName": "Service Requests"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Call Status": "call_back",
+            "Contact": "={{ [$('Upsert Contact').item.json.id] }}",
+            "Date": "={{ $now.toISODate() }}",
+            "Service Location": "={{ $('Standardize Data').item.json[\"Service Location\"] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Contact",
+              "displayName": "Contact",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Call Status",
+              "displayName": "Call Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "wrong_number",
+                  "value": "wrong_number"
+                },
+                {
+                  "name": "call_back",
+                  "value": "call_back"
+                },
+                {
+                  "name": "complete",
+                  "value": "complete"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Type",
+              "displayName": "Service Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Repair",
+                  "value": "Repair"
+                },
+                {
+                  "name": "Maintenance",
+                  "value": "Maintenance"
+                },
+                {
+                  "name": "Installation",
+                  "value": "Installation"
+                },
+                {
+                  "name": "Inspection",
+                  "value": "Inspection"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Urgency",
+              "displayName": "Urgency",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Details",
+              "displayName": "Job Details",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Location",
+              "displayName": "Service Location",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "id": "836f96ac-d6ea-4bb1-bcf7-556fa2566486",
+      "name": "Voicemail",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        2704,
+        256
+      ],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "JmMPODwSKkXQoluh",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "mode": "list",
+          "value": "appTgp7XEjZ9A9nE3",
+          "cachedResultName": "Apex HVAC CRM"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "tblOJ99hfaDq9dcAc",
+          "cachedResultName": "Service Requests"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Call Status": "={{ $('Format Job Details').item.json._vapi_call_status || 'complete' }}",
+            "Contact": "={{ [$('Upsert Contact').item.json.id] }}",
+            "Date": "={{ $now.toISODate() }}",
+            "Job Details": "={{ $('Format Job Details').item.json.jobDetails }}",
+            "Service Type": "={{ $('Standardize Data').item.json['Service Type'] }}",
+            "Urgency": "={{ $('Format Job Details').item.json._vapi_urgency }}",
+            "Service Location": "={{ $('Standardize Data').item.json[\"Service Location\"] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "dateTime",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Contact",
+              "displayName": "Contact",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "array",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Call Status",
+              "displayName": "Call Status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "wrong_number",
+                  "value": "wrong_number"
+                },
+                {
+                  "name": "call_back",
+                  "value": "call_back"
+                },
+                {
+                  "name": "complete",
+                  "value": "complete"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Type",
+              "displayName": "Service Type",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Repair",
+                  "value": "Repair"
+                },
+                {
+                  "name": "Maintenance",
+                  "value": "Maintenance"
+                },
+                {
+                  "name": "Installation",
+                  "value": "Installation"
+                },
+                {
+                  "name": "Inspection",
+                  "value": "Inspection"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Urgency",
+              "displayName": "Urgency",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Job Details",
+              "displayName": "Job Details",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Service Location",
+              "displayName": "Service Location",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "typecast": true
+        }
+      },
+      "id": "342a5167-10b6-4772-a9b4-f0660e067004",
+      "name": "Completed",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.2,
+      "position": [
+        2704,
+        448
+      ],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "JmMPODwSKkXQoluh",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.vapi.ai/call/{{ $('Call Lead').item.json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {}
+      },
+      "id": "7cd700bb-4104-470c-8740-cf774b10beb7",
+      "name": "Get Call Details",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1824,
+        368
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "rG7QjUi6MqYZySJg",
+          "name": "Vapi Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# 🛠️ Setup Guide  \n**Author:** Ransky — AI Automation Developer\n\nFollow the steps below to get this workflow up and running:\n\n---\n\n### ✅ Step 1: Add Your [Vapi](https://vapi.ai/) API Key  \n- Grab your private API key from the Vapi dashboard  \n- In n8n, create a **Generic Credential** using **Bearer Auth**  \n- Attach it to the **Call Lead** and **Get Call Details** HTTP Request nodes\n\n---\n\n### ✅ Step 2: Add the System Prompt to Your Vapi Assistant  \n- Open your Vapi Assistant settings  \n- Copy/paste the system prompt from `prompts/system-prompt-v2.md` in this repo  \n- Add the structured outputs: `call_status`, `urgency`, `scope_of_call`, `system_type`, `unit_quantity`, `preferred_time`\n\n---\n\n### ✅ Step 3: Connect a Phone Number in Vapi  \n- Connect (or purchase) a phone number inside Vapi  \n- In the **Call Lead** HTTP Request node, replace:  \n  - **assistantId** with your own  \n  - **phoneNumberId** with your own\n\n---\n\n### ✅ Step 4: Connect Your Airtable Base  \n- Create a base with two tables — **Contacts** (Name, Phone, Email) and **Service Requests** (Contact, Date, Call Status, Service Type, Urgency, Job Details, Service Location)  \n- In n8n, create an **Airtable Personal Access Token** credential  \n- Point every Airtable node at **your own** base and tables (not the demo base)\n\n---\n\n### 💡 Final Check  \nBefore running, confirm:\n- Vapi API key is present in both required HTTP Request nodes  \n- Assistant ID + Phone Number ID are correctly set in **Call Lead**  \n- Airtable credential + base/table selections point to **your own** Airtable base  \n\nFull reference: `docs/setup-guide.md` | Schema/API details: `docs/api-contracts.md`",
+        "height": 900,
+        "width": 656
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        560,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "2f58e4f0-31b8-4f86-9c74-154ee20b6690",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Incorrect Phone?": {
+      "main": [
+        [
+          {
+            "node": "Wrong Number",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Lead": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ended?": {
+      "main": [
+        [
+          {
+            "node": "Voicemail?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Polling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Ended?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Form Submitted": {
+      "main": [
+        [
+          {
+            "node": "Standardize Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Voicemail?": {
+      "main": [
+        [
+          {
+            "node": "Voicemail",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Job Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Standardize Data": {
+      "main": [
+        [
+          {
+            "node": "Upsert Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert Contact": {
+      "main": [
+        [
+          {
+            "node": "Incorrect Phone?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Job Details": {
+      "main": [
+        [
+          {
+            "node": "Completed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get Call Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Call Details": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Polling": {
+      "main": [
+        [
+          {
+            "node": "Get Call Details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "versionId": "2367b06b-5ed8-4df0-b5dd-11ec16a4cbeb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp",
+    "instanceId": "4f4a84207c5cbf1210d2a506560ea5e70425c52f1296b42181bc2fb4101f168b"
+  },
+  "nodeGroups": [],
+  "id": "izuwT3GEzZio8lS6",
+  "tags": []
+}

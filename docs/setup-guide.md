@@ -62,7 +62,7 @@ Full field-level schema and notes: `docs/api-contracts.md`.
 
 1. **Import the workflow:**
    - In n8n, go to Workflows → Import
-   - Upload `workflows/outbound-call-hvac-updated.json`
+   - Upload `workflows/Outbound Call - HVAC.json`
 2. **Configure credentials:**
    - **Vapi**: Create an HTTP Bearer Auth credential with your Vapi API key, attach it to the `Call Lead` and `Get Call Details` nodes
    - **Airtable**: Create an Airtable Personal Access Token credential, attach it to all Airtable nodes and point them at your base/tables from Phase 2
